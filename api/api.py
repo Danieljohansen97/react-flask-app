@@ -13,7 +13,7 @@ blueLED = LED(21)
 app = Flask(__name__)
 
 
-@app.route('/systeminfo')
+@app.route('/api/systeminfo')
 def get_current_time():
     return {'systime': time.time(),
             'machine': platform.machine(),
@@ -23,42 +23,42 @@ def get_current_time():
             'processor': platform.processor()}
 
 ## LED Routes
-@app.route('/red-on')
+@app.route('/api/red-on')
 def red_on():
     redLED.on()
     return { 'message': "Red LED on" }
 
-@app.route('/red-off')
+@app.route('/api/red-off')
 def red_off():
     redLED.off()
     return { 'message': "Red LED off" }
 
-@app.route('/yellow-on')
+@app.route('/api/yellow-on')
 def yellow_on():
     yellowLED.on()
     return { 'message': "Yellow LED on" }
 
-@app.route('/yellow-off')
+@app.route('/api/yellow-off')
 def yellow_off():
     yellowLED.off()
     return { 'message': "Yellow LED off" }
 
-@app.route('/green-on')
+@app.route('/api/green-on')
 def green_on():
     greenLED.on()
     return { 'message': "Green LED on" }
 
-@app.route('/green-off')
+@app.route('/api/green-off')
 def green_off():
     greenLED.off()
     return { 'message': "Green LED off" }
 
-@app.route('/blue-on')
+@app.route('/api/blue-on')
 def blue_on():
     blueLED.on()
     return { 'message': "Blue LED on" }
 
-@app.route('/blue-off')
+@app.route('/api/blue-off')
 def blue_off():
     blueLED.off()
     return { 'message': "Blue LED off" }

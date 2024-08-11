@@ -7,7 +7,7 @@ const ControlGroup = ({ color }) => {
 
     const ledOn = async (color) => {
         try {
-            const data = await (await fetch(`/${color}-on`)).json()
+            const data = await (await fetch(`/api/${color}-on`)).json()
             setMessage(data.message)
         } catch (err) {
             setErrMessage(err.message)
@@ -15,7 +15,7 @@ const ControlGroup = ({ color }) => {
     }
     const ledOff = async (color) => {
         try {
-            const data = await (await fetch(`/${color}-off`)).json()
+            const data = await (await fetch(`/api/${color}-off`)).json()
             setMessage(data.message)
         } catch (err) {
             setErrMessage(err.message)

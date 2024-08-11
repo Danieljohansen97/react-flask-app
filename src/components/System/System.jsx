@@ -5,7 +5,7 @@ const System = () => {
     const [sysInfo, setSysInfo] = useState({});
 
     useEffect(() => {
-        fetch('/systeminfo').then(res => res.json()).then(data => {
+        fetch('/api/systeminfo').then(res => res.json()).then(data => {
 
             setSysInfo({
                 time: Date(data.systime * 1000),
